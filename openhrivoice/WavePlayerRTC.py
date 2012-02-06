@@ -76,6 +76,8 @@ class WavePlayerRTC(OpenRTM_aist.DataFlowComponentBase):
         OpenRTM_aist.DataFlowComponentBase.onActivated(self, ec_id)
         try:
             self._stream = wave.open(self._file[0], 'rb')
+            self._width = self._stream.getsampwidth()
+            self._logger.RTC_INFO(("width = %d", self._width))
         except IOError:
             return RTC.RTC_ERROR
         self._prevtime = time.clock() - 1.0
@@ -83,7 +85,10 @@ class WavePlayerRTC(OpenRTM_aist.DataFlowComponentBase):
 
     def onExecute(self, ec_id):
         OpenRTM_aist.DataFlowComponentBase.onExecute(self, ec_id)
-        now = time.clock()
+        if platform.system() == 'Windows':
+            now = time.clock()
+        else:
+            now = time.time()
         chunk = int(self._stream.getframerate() * (now - self._prevtime))
         if chunk > 0:
             self._prevtime = now
