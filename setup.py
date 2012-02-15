@@ -27,6 +27,7 @@ if sys.platform == "win32":
     extra = {
         "console": [
                     "openhrivoice/JuliusRTC.py",
+                    "openhrivoice/JuliusDicRTC.py",
                     "openhrivoice/srgstopls.py",
                     "openhrivoice/srgstojulius.py",
                     "openhrivoice/validatesrgs.py",
@@ -74,6 +75,7 @@ setup(name='openhrivoice',
       [console_scripts]
       openjtalkrtc = openhrivoice.OpenJTalkRTC:main
       juliusrtc = openhrivoice.JuliusRTC:main
+      juliusdicrtc = openhrivoice.JuliusDicRTC:main
       srgstopls = openhrivoice.srgstopls:main
       srgstojulius = openhrivoice.srgstojulius:main
       validatesrgs = openhrivoice.validatesrgs:main

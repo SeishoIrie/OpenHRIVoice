@@ -93,7 +93,7 @@ def main():
         sys.exit(1)
     manager = OpenRTM_aist.Manager.init(utils.genmanagerargs(opts))
     manager.activateManager()
-    for c in ('JuliusRTC', 'OpenJTalkRTC', 'FestivalRTC', 'MARYRTC', 'XSLTRTC', 'CombineResultsRTC'):
+    for c in ('JuliusRTC', 'OpenJTalkRTC', 'FestivalRTC', 'MARYRTC', 'XSLTRTC', 'CombineResultsRTC', 'JuliusDicRTC'):
         print 'loading... %s' % (c,)
         exec('from openhrivoice import %s' % (c,))
         profile=OpenRTM_aist.Properties(defaults_str=eval('%s.%s_spec' % (c, c)))
