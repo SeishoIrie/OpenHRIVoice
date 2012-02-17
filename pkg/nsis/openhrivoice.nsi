@@ -116,6 +116,7 @@ Section $(TEXT_SecBase) SecBase
 
   ; Main executables
   File "/oname=juliusrtc.exe" "${TOP_BUILDDIR}\dist\JuliusRTC.exe"
+  File "/oname=juliusdicrtc.exe" "${TOP_BUILDDIR}\dist\JuliusDicRTC.exe"
   File "/oname=openjtalkrtc.exe" "${TOP_BUILDDIR}\dist\OpenJTalkRTC.exe"
   File "/oname=festivalrtc.exe" "${TOP_BUILDDIR}\dist\FestivalRTC.exe"
   File "/oname=combineresultsrtc.exe" "${TOP_BUILDDIR}\dist\CombineResultsRTC.exe"
@@ -175,6 +176,7 @@ Section $(TEXT_SecBase) SecBase
   CreateDirectory "${SCDIR}"
   CreateShortCut "${SCDIR}\Uninstall Voice Components.lnk" "$INSTDIR\uninstall.exe"
   CreateShortCut "${SCDIR}\juliusrtc.lnk" "$INSTDIR\juliusrtc.exe" "--gui"
+  CreateShortCut "${SCDIR}\juliusdicrtc.lnk" "$INSTDIR\juliusdicrtc.exe"
   CreateShortCut "${SCDIR}\srgstopls.lnk" "$INSTDIR\srgstopls.exe" "--gui"
   CreateShortCut "${SCDIR}\validatesrgs.lnk" "$INSTDIR\validatesrgs.exe" "--gui"
   CreateShortCut "${SCDIR}\openjtalkrtc.lnk" "$INSTDIR\openjtalkrtc.exe"
@@ -268,6 +270,7 @@ Section "Uninstall"
 
   Delete "${SCDIR}\Uninstall Voice Components.lnk"
   Delete "${SCDIR}\juliusrtc.lnk"
+  Delete "${SCDIR}\juliusdicrtc.lnk"
   Delete "${SCDIR}\srgstopls.lnk"
   Delete "${SCDIR}\validatesrgs.lnk"
   Delete "${SCDIR}\openjtalkrtc.lnk"

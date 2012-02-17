@@ -3,6 +3,7 @@
 from setuptools import setup, find_packages
 from setuptools.command.build_ext import build_ext
 import sys, os
+import platform
 from glob import glob
 from openhrivoice.__init__ import __version__
 
@@ -17,6 +18,9 @@ except ImportError:
 try:
     import py2exe
     sys.path.append("openhrivoice")
+    if platform.system() == 'Windows':
+        sys.path.append("c:/Python26/Lib/site-packages/gtk-2.0/runtime/bin/")
+    #else:
 except ImportError:
     pass
 

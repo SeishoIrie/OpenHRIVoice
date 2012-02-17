@@ -1,5 +1,5 @@
-rmdir /S /Q dist
-rmdir /S /Q build
+:// rmdir /S /Q dist
+:// rmdir /S /Q build
 \Python26\python.exe setup.py py2exe
 copy openhrivoice\*.xsd dist
 copy "\Program Files (x86)\Graphviz 2.28\bin\*.dll" dist
