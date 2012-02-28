@@ -68,6 +68,13 @@ class JuliusWrap(threading.Thread):
             self._cmdline.extend(["-dfa", os.path.join(self._config._basedir, "dummy-en.dfa")])
             self._cmdline.extend(["-v", os.path.join(self._config._basedir, "dummy-en.dict")])
             self._cmdline.extend(["-sb", "160.0"])
+        #for chinese test
+        elif self._lang == 'cn':
+            self._cmdline.extend(['-h',  self._config._julius_hmm_cn])
+            self._cmdline.extend(['-hlist', self._config._julius_hlist_cn])
+            self._cmdline.extend(["-dfa", os.path.join(self._config._basedir, "dummy-en.dfa")])
+            self._cmdline.extend(["-v", os.path.join(self._config._basedir, "test-cn.dict")])
+            self._cmdline.extend(["-sb", "160.0"])
         else:
             self._cmdline.extend(['-h',  self._config._julius_hmm_en])
             self._cmdline.extend(['-hlist', self._config._julius_hlist_en])
@@ -245,7 +252,7 @@ class DataListener(OpenRTM_aist.ConnectorDataListenerT):
 class JuliusRTC(OpenRTM_aist.DataFlowComponentBase):
     def __init__(self, manager):
         OpenRTM_aist.DataFlowComponentBase.__init__(self, manager)
-        self._lang = 'en'
+        self._lang = 'cn'
         self._srgs = None
         self._j = None
         self._copyrights = ['''

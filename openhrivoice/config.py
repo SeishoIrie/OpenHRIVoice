@@ -49,6 +49,10 @@ class config():
             self._julius_hmm_en = os.path.join(self._julius_voxforgedir, "hmmdefs")
             self._julius_hlist_en = os.path.join(self._julius_voxforgedir, "tiedlist")
             self._julius_dict_en = os.path.join(self._julius_voxforgedir, "dict")
+            #for chinese test
+            self._julius_chinesedir = os.path.join(self._basedir, "3rdparty", "chinese_test")
+            self._julius_hmm_cn = os.path.join(self._julius_chinesedir, "hmmsdef.hmm")
+            self._julius_hlist_cn = os.path.join(self._julius_chinesedir, "hmmlist.txt")
         else:
             self._julius_runkitdir = "/usr/share/julius-runkit"
             self._julius_voxforgedir = "/usr/share/julius-voxforge"

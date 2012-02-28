@@ -132,6 +132,7 @@ Section $(TEXT_SecBase) SecBase
   File "${TOP_SRCDIR}\openhrivoice\dummy.dict"
   File "${TOP_SRCDIR}\openhrivoice\dummy-en.dfa"
   File "${TOP_SRCDIR}\openhrivoice\dummy-en.dict"
+  File "${TOP_SRCDIR}\openhrivoice\test-cn.dict"
   File "${TOP_SRCDIR}\openhrivoice\xml.xsd"
   File "${TOP_SRCDIR}\openhrivoice\grammar.xsd"
   File "${TOP_SRCDIR}\openhrivoice\grammar-core.xsd"
