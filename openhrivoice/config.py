@@ -57,6 +57,9 @@ class config():
             self._julius_runkitdir = "/usr/share/julius-runkit"
             self._julius_voxforgedir = "/usr/share/julius-voxforge"
             self._julius_voxforgedir_de = "/usr/share/julius-voxforge-de"
+            #wu#self._julius_bin = "/usr/bin/julius"                 #julius-4.2.2
+            #wu#self._julius_bin = "/usr/local/bin/julius"           #julius-4.3.1
+            #wu#self._julius_bin = "/home/linuxium/local/bin/julius" #julius-4.1.5
             self._julius_bin = "/usr/bin/julius"
             self._julius_hmm_en = os.path.join(self._julius_voxforgedir, "acoustic", "hmmdefs")
             self._julius_hlist_en = os.path.join(self._julius_voxforgedir, "acoustic", "tiedlist")
@@ -65,7 +68,8 @@ class config():
             self._julius_hlist_de = os.path.join(self._julius_voxforgedir_de, "acoustic", "tiedlist")
         self._julius_hmm_ja = os.path.join(self._julius_runkitdir, "model", "phone_m", "hmmdefs_ptm_gid.binhmm")
         self._julius_hlist_ja = os.path.join(self._julius_runkitdir, "model", "phone_m", "logicalTri")
-        self._julius_ngram_ja = os.path.join(self._julius_runkitdir, "model", "lang_m", "web.60k.8-8.bingramv4.gz")
+        #wu#self._julius_ngram_ja = os.path.join(self._julius_runkitdir, "model", "lang_m", "web.60k.8-8.bingramv4.gz")
+        self._julius_ngram_ja = os.path.join(self._julius_runkitdir, "model", "lang_m", "web.60k.8-8.bingramv5.gz")
         self._julius_dict_ja = os.path.join(self._julius_runkitdir, "model", "lang_m", "web.60k.htkdic")
 
         if self._platform == "Windows":
